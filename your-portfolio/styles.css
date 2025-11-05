@@ -1,0 +1,137 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2865
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 /* =========================\
+   Minimal professional style for Banking/Finance\
+   Palette: Navy #0B1E3F, Light Gray #F5F7FA, Gold #C9A227\
+   Font: Poppins (Google Fonts)\
+   BEM methodology\
+   ========================= */\
+\
+:root\{\
+  --navy:#0B1E3F;\
+  --navy-600:#102a5c;\
+  --light:#F5F7FA;\
+  --text:#111827;\
+  --muted:#6B7280;\
+  --gold:#C9A227;\
+  --card:#ffffff;\
+  --border:#E5E7EB;\
+\}\
+body.theme--dark\{\
+  --light:#0c1426;\
+  --text:#E5E7EB;\
+  --muted:#9CA3AF;\
+  --card:#0f1c36;\
+  --border:#1f2f57;\
+\}\
+\
+/* Reset */\
+*\{box-sizing:border-box\}\
+html\{scroll-behavior:smooth\}\
+body\{\
+  margin:0;\
+  font-family:"Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;\
+  color:var(--text);\
+  background:var(--light);\
+  line-height:1.6;\
+\}\
+img\{max-width:100%;display:block;border-radius:20px\}\
+a\{color:var(--navy)\}\
+a:hover\{opacity:.9\}\
+.container\{max-width:1080px;margin:0 auto;padding:0 20px\}\
+.sr-only\{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0\}\
+\
+/* Skip link */\
+.skip-link\{position:absolute;left:-9999px;top:auto\}\
+.skip-link:focus\{left:10px;top:10px;background:#fff;color:#000;padding:8px 12px;z-index:1000;border-radius:8px\}\
+\
+/* Nav */\
+.site-header\{position:sticky;top:0;z-index:100;background:var(--card);border-bottom:1px solid var(--border)\}\
+.nav\{display:flex;align-items:center;gap:16px;padding:14px 0\}\
+.nav__brand\{display:flex;align-items:center;gap:10px;color:var(--navy);font-weight:600;text-decoration:none\}\
+.nav__brand-dot\{width:12px;height:12px;border-radius:50%;background:var(--gold)\}\
+.nav__toggle\{display:none;background:none;border:1px solid var(--border);padding:6px 10px;border-radius:10px\}\
+.nav__links\{display:flex;gap:18px;list-style:none;margin:0;padding:0\}\
+.nav__links a\{color:var(--text);text-decoration:none\}\
+.nav__links a:hover,.nav__links a:focus\{color:var(--navy)\}\
+.actions\{margin-left:auto;display:flex;gap:10px;align-items:center\}\
+.btn\{display:inline-flex;align-items:center;gap:8px;border:none;border-radius:999px;padding:10px 16px;text-decoration:none;cursor:pointer;font-weight:500\}\
+.btn--primary\{background:var(--navy);color:#fff\}\
+.btn--secondary\{background:transparent;color:var(--navy);border:1px solid var(--navy)\}\
+.btn--ghost\{background:transparent;border:1px solid var(--border);color:var(--text)\}\
+.btn:focus\{outline:3px solid var(--gold);outline-offset:2px\}\
+\
+/* Hero */\
+.hero\{display:grid;grid-template-columns:1.3fr .7fr;gap:30px;align-items:center;padding:52px 0\}\
+.hero__title\{font-size:clamp(32px,4vw,48px);margin:0 0 8px\}\
+.hero__subtitle\{font-size:clamp(18px,2.2vw,22px);color:var(--muted);margin:0 0 10px\}\
+.hero__tagline\{max-width:64ch\}\
+.hero__photo\{border:4px solid var(--light);box-shadow:0 8px 28px rgba(0,0,0,.08)\}\
+\
+/* Sections */\
+.section\{padding:56px 0;border-top:1px solid var(--border)\}\
+.section__title\{font-size:26px;margin:0 0 18px;position:relative\}\
+.section__title::after\{content:"";display:block;width:48px;height:3px;background:var(--gold);margin-top:8px;border-radius:2px\}\
+.lead\{font-size:18px;color:var(--text)\}\
+\
+/* Cards / grids */\
+.card\{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:18px\}\
+.card__title\{margin:0 0 10px;font-size:18px\}\
+.cards\{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px\}\
+.about__grid\{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px\}\
+.list\{padding-left:18px\}\
+.list--cols\{columns:2;gap:40px\}\
+.tag\{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:6px 10px;margin:4px 6px 0 0;background:transparent\}\
+\
+/* Experience */\
+.xp\{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:18px;margin-bottom:16px\}\
+.xp__header\{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px\}\
+.xp__role\{margin:0;font-size:18px\}\
+.xp__meta\{color:var(--muted);display:flex;gap:8px;flex-wrap:wrap\}\
+.xp__bullets\{margin:12px 0 0 0\}\
+.xp--placeholder\{opacity:.85;border-style:dashed\}\
+\
+/* Education */\
+.edu\{border-left:3px solid var(--gold);padding:12px 14px;margin:10px 0;background:var(--card);border-radius:12px;border:1px solid var(--border);border-left:4px solid var(--gold)\}\
+.edu__title\{margin:0 0 4px\}\
+.edu__meta\{color:var(--muted);margin:0 0 6px\}\
+\
+/* Skills */\
+.skills\{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px\}\
+.skills__group\{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:16px\}\
+.skills__title\{display:flex;align-items:center;gap:8px;margin:0 0 8px\}\
+.icon\{color:var(--navy)\}\
+\
+/* Interests */\
+.interests\{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px\}\
+.interest\{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:16px\}\
+.interest__icon\{font-size:26px\}\
+\
+/* Contact */\
+.contact\{display:flex;flex-wrap:wrap;gap:12px\}\
+.contact__item\{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--border);border-radius:999px;padding:10px 14px;text-decoration:none;color:var(--text)\}\
+.contact__btn\{cursor:pointer\}\
+\
+/* Footer */\
+.site-footer\{border-top:1px solid var(--border);padding:22px 0;background:var(--card)\}\
+.footer__grid\{display:flex;align-items:center;justify-content:space-between\}\
+.back-to-top\{text-decoration:none\}\
+\
+/* Mobile */\
+@media (max-width:860px)\{\
+  .hero\{grid-template-columns:1fr;gap:20px\}\
+  .nav__toggle\{display:inline-block\}\
+  .nav__links\{display:none;position:absolute;right:20px;top:58px;background:var(--card);border:1px solid var(--border);padding:12px;border-radius:14px;flex-direction:column\}\
+  .nav__links--open\{display:flex\}\
+  .actions\{margin-left:0\}\
+  .list--cols\{columns:1\}\
+\}\
+\
+/* Transitions & focus */\
+a, button \{transition: all .15s ease\}\
+a:focus, button:focus\{outline:3px solid var(--gold);outline-offset:2px\}}
