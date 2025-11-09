@@ -108,6 +108,15 @@ a:hover { opacity: .9; }
 .btn--secondary { background: transparent; color: var(--navy); border: 1px solid var(--navy); }
 .btn--ghost { background: transparent; border: 1px solid var(--border); color: var(--text); }
 .btn:focus { outline: 3px solid var(--gold); outline-offset: 2px; }
+.btn--download {
+  background: var(--gold);
+  border: 1px solid var(--border); 
+  color: var(--border);
+  max-width: fit-content;
+  max-height: fit-content;
+  align-self: end;
+  font-weight: 400;
+} 
 
 /* Hero */
 .hero {
@@ -137,7 +146,7 @@ a:hover { opacity: .9; }
 .lead { font-size: 18px; color: var(--text); }
 
 /* Cards / grids */
-.card { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 18px; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 18px; display: grid;}
 .card__title { margin: 0 0 10px; font-size: 18px; }
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
 .about__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
