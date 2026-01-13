@@ -117,6 +117,18 @@ a:hover { opacity: .9; }
   align-self: end;
   font-weight: 400;
 } 
+.btn--download--secondary {
+  background: var(--gold);
+  border: 1px solid var(--border); 
+  color: var(--border);
+  max-width: fit-content;
+  max-height: fit-content;
+  align-self: end;
+  font-weight: 400;
+  position: relative;
+  left : 9rem;
+  bottom: 3.9rem;
+} 
 
 /* Hero */
 .hero {
@@ -244,7 +256,15 @@ a:hover { opacity: .9; }
   .nav__links--open { display: flex; }
   .actions { margin-left: 0; }
   .list--cols { columns: 1; }
-}
+  .btn--download--secondary {
+    bottom: 2.9rem;}
+  }
+
+  @media (min-width: 895px) {
+    .btn--download--secondary {
+    bottom: 4.3rem;}
+  }
+
 
 /* Transitions & focus */
 a, button { transition: all .15s ease; }
