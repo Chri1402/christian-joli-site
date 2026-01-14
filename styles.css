@@ -21,7 +21,8 @@ body.theme--dark {
   --text: #E5E7EB;
   --muted: #9CA3AF;
   --card: #0f1c36;
-  --border: #1f2f57;
+  --border: #2e406d;
+  --navy: #3b82f6;
 }
 
 /* Reset */
@@ -84,9 +85,50 @@ a:hover { opacity: .9; }
 .nav__toggle {
   display: none;
   background: none;
-  border: 1px solid var(--border);
-  padding: 6px 10px;
-  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  position: relative;
+  outline: none;
+  transition: all 300ms ease;
+}
+
+.nav__toggle::before,
+.nav__toggle::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  left: 2px;
+  transition: all 300ms ease;
+}
+
+.nav__toggle::before {
+  top: 5px;
+  transform: rotate(0deg);
+}
+
+.nav__toggle::after {
+  top: 18px;
+  transform: rotate(0deg);
+}
+
+.nav__toggle::before {
+  box-shadow: 0 6.5px 0 var(--text);
+}
+
+.nav__toggle[aria-expanded="true"]::before {
+  transform: rotate(45deg);
+  top: 13px;
+  box-shadow: none;
+}
+
+.nav__toggle[aria-expanded="true"]::after {
+  transform: rotate(-45deg);
+  top: 13px;
 }
 .nav__links { display: flex; gap: 18px; list-style: none; margin: 0; padding: 0; }
 .nav__links a { color: var(--text); text-decoration: none; }
@@ -239,9 +281,10 @@ a:hover { opacity: .9; }
 .back-to-top { text-decoration: none; }
 
 /* Mobile */
-@media (max-width: 860px) {
+@media (max-width: 950px) {
   .hero { grid-template-columns: 1fr; gap: 20px; }
-  .nav__toggle { display: inline-block; }
+  .nav__toggle { display: inline-block; order: 2; }
+  .actions { order: 1; }
   .nav__links {
     display: none;
     position: absolute;
@@ -253,12 +296,13 @@ a:hover { opacity: .9; }
     border-radius: 14px;
     flex-direction: column;
   }
-  .nav__links--open { display: flex; }
-  .actions { margin-left: 0; }
+  .nav__links--open { display: inline-flex; }
   .list--cols { columns: 1; }
   .btn--download--secondary {
     bottom: 2.9rem;}
   }
+
+
 
   @media (min-width: 895px) {
     .btn--download--secondary {
@@ -266,6 +310,45 @@ a:hover { opacity: .9; }
   }
 
 
-/* Transitions & focus */
+
 a, button { transition: all .15s ease; }
 a:focus, button:focus { outline: 3px solid var(--gold); outline-offset: 2px; }
+
+
+.toggle {
+  --size: 2rem;
+  
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  
+  width: var(--size);
+  height: var(--size);
+  box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
+  border-radius: 999px;
+  color: var(--navy);
+  background: transparent;
+  border: none;
+  
+  transition: all 500ms;
+}
+
+.toggle:checked {
+  --ray-size: calc(var(--size) * -0.4);
+  --offset-orthogonal: calc(var(--size) * 0.65);
+  --offset-diagonal: calc(var(--size) * 0.45);
+
+  color: var(--gold);
+
+  transform: scale(0.75);
+  box-shadow: 
+    inset 0 0 0 var(--size),
+    calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
+    var(--offset-orthogonal) 0 0 var(--ray-size),
+    0 calc(var(--offset-orthogonal) * -1) 0 var(--ray-size),
+    0 var(--offset-orthogonal) 0 var(--ray-size),
+    calc(var(--offset-diagonal) * -1) calc(var(--offset-diagonal) * -1) 0 var(--ray-size),
+    var(--offset-diagonal) var(--offset-diagonal) 0 var(--ray-size),
+    calc(var(--offset-diagonal) * -1) var(--offset-diagonal) 0 var(--ray-size),
+    var(--offset-diagonal) calc(var(--offset-diagonal) * -1) 0 var(--ray-size);
+}

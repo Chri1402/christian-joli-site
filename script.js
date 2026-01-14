@@ -5,10 +5,13 @@ const navLinks   = document.getElementById('navLinks');
 // Theme: load preference
 (function initTheme(){
   const saved = localStorage.getItem('cj-theme');
-  if(saved === 'dark') document.body.classList.replace('theme--light','theme--dark');
+  if(saved === 'dark') {
+    document.body.classList.replace('theme--light','theme--dark');
+    modeToggle.checked = true;
+  }
 })();
 
-modeToggle.addEventListener('click', () => {
+modeToggle.addEventListener('change', () => {
   const isDark = document.body.classList.toggle('theme--dark');
   if(isDark){
     document.body.classList.remove('theme--light');
